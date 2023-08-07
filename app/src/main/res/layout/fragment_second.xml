@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:id="@+id/today_sale_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="30dp"
+        android:isScrollContainer="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp">
+
+            <TextView
+                android:id="@+id/sale_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                android:paddingStart="16dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Sales Report"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/send_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:background="@color/blue"
+                android:text="Send Status"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/today_price_layout" />
+
+            <LinearLayout
+                android:id="@+id/sales_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sale_quantity_title">
+
+                <EditText
+                    android:id="@+id/petrol_sales"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Petrol (MS)"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/diesel_sales"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Diesel (HSD)"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cumulative_sales_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cumulative_sale_quantity_title">
+
+                <EditText
+                    android:id="@+id/cumulative_petrol_sales"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Petrol (MS)"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/cumulative_diesel_sales"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Diesel (HSD)"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cumulative_purchase_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/purchase_quantity_title">
+
+                <EditText
+                    android:id="@+id/petrol_purchase"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Petrol (MS)"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/diesel_purchase"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Diesel (HSD)"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/in_stock_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/in_stock_title">
+
+                <EditText
+                    android:id="@+id/in_stock_petrol"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Petrol (MS)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/in_stock_diesel"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Diesel (HSD)"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/today_price_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/today_price_title">
+
+                <EditText
+                    android:id="@+id/petrol_price"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Petrol (MS)"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/diesel_price"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:focusable="true"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Diesel (HSD)"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sale_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sale_banner"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:gravity="center"
+                >
+
+                <EditText
+                    android:id="@+id/sale_date"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/text_field_height"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Sale Date"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:fontFamily="@font/poppins"
+                    android:drawableRight="@drawable/baseline_calendar_today_24"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/sale_quantity_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Sales (In Litres) :"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sale_date_layout" />
+
+            <TextView
+                android:id="@+id/cumulative_sale_quantity_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Cumulative Sales (In Litres) :"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sales_layout" />
+
+            <TextView
+                android:id="@+id/purchase_quantity_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Purchases (In Litres) :"
+                android:textSize="24dp"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cumulative_sales_layout" />
+
+            <TextView
+                android:id="@+id/in_stock_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="In Stock (In Litres) :"
+                android:textSize="24dp"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cumulative_purchase_layout" />
+
+            <TextView
+                android:id="@+id/today_price_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Today Price (In Rupees) :"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/in_stock_layout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
