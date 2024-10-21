@@ -93,6 +93,8 @@ class DailySalesFragment : Fragment() {
             val hsdCumulativeSalesInLitres = binding.cumulativeDieselSales.text
             val msTodayPurchase = binding.petrolPurchase.text
             val hsdTodayPurchase = binding.dieselPurchase.text
+            val msCumPurchase = binding.cumulativePetrolPurchase.text
+            val hsdCumPurchase = binding.cumulativeDieselPurchase.text
             val msAvailableStock = binding.inStockPetrol.text
             val hsdAvailableStock = binding.inStockDiesel.text
             val msRate = binding.petrolPrice.text
@@ -116,6 +118,10 @@ class DailySalesFragment : Fragment() {
                 "*Purchase in Litres:*\n" +
                 "\n" +
                 "MS : ${msTodayPurchase}\t\tHSD : ${hsdTodayPurchase}\n" +
+                "\n" +
+                "*Cumulative Purchase in Litres:*\n" +
+                "\n" +
+                "MS : ${msCumPurchase}\t\tHSD : ${hsdCumPurchase}\n" +
                 "\n" +
                 "*Total Available Stock:*\n" +
                 "\n" +
